@@ -60,7 +60,19 @@ public class SeaGridAdapter : ISeaGrid
 	/// Indicates that the grid has been changed
 	/// </summary>
 	// public event EventHandler ISeaGrid Changed;
-	public event ISeaGrid Changed;
+	public EventHandler changed;
+
+	event EventHandler ISeaGrid.Changed
+	{
+		add
+		{
+
+		}
+		remove
+		{
+
+		}
+	}
 	/// <summary>
 	/// Get the width of a tile
 	/// </summary>
