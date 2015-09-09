@@ -262,7 +262,7 @@ doCompile()
     fi
     
     if [ "$OS" = "$WIN" ]; then
-        "${GMCS_BIN}" ${GMCS_FLAGS} ${CS_FLAGS} -out:"${OUT_DIR}/${GAME_NAME}.exe" `find ${APP_PATH} -mindepth 2 -exec ${APP_PATH}/lib/cygpath -ma {} \; | grep [.]cs$` >> ${LOG_FILE}
+        "${GMCS_BIN}" ${GMCS_FLAGS} ${CS_FLAGS} /reference:System.Data -out:"${OUT_DIR}/${GAME_NAME}.exe" `find ${APP_PATH} -mindepth 2 -exec ${APP_PATH}/lib/cygpath -ma {} \; | grep [.]cs$` >> ${LOG_FILE}
     else
         "${GMCS_BIN}" ${GMCS_FLAGS} ${CS_FLAGS} /reference:System.Data -out:"${OUT_DIR}/${GAME_NAME}.exe" `find ${APP_PATH} -mindepth 2 | grep [.]cs$` >> ${LOG_FILE}
     fi
