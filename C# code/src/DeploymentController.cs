@@ -42,6 +42,8 @@ static class DeploymentController
 	private const int DIR_BUTTONS_WIDTH = 47;
 
 	private const int TEXT_OFFSET = 5;
+
+	private static int[] xy = HumanPlayer.RandomizeDeployment();
 	private static Direction _currentDirection = Direction.UpDown;
 
 	private static ShipName _selectedShip = ShipName.Tug;
@@ -67,7 +69,7 @@ static class DeploymentController
 		}
 
 		if (SwinGame.KeyTyped(KeyCode.vk_r)) {
-			HumanPlayer.RandomizeDeployment();
+			xy = HumanPlayer.RandomizeDeployment();
 		}
 
 		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
@@ -86,8 +88,50 @@ static class DeploymentController
 			} else if (IsMouseInRectangle(LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
 				_currentDirection = Direction.LeftRight;
 			} else if (IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
-				HumanPlayer.RandomizeDeployment();
+				xy = HumanPlayer.RandomizeDeployment();
 			}
+		}
+	}
+
+	private static void RecPosition(ShipName _selectedShip, int row, int col, int dir) {
+		switch (_selectedShip.ToString()) {
+			case "Tug": 
+						xy[0] = row;
+						xy[1] = col;
+						xy[2] = dir;
+						break;
+			case "Submarine": 
+						xy[3] = row;
+						xy[4] = col;
+						xy[5] = dir;
+						break;
+			case "Destoryer": 
+						xy[6] = row;
+						xy[7] = col;
+						xy[8] = dir;
+						break;
+			case "Battleship": 
+						xy[9] = row;
+						xy[10] = col;
+						xy[11] = dir;
+						break;
+			case "AircraftCarrier": 
+						xy[12] = row;
+						xy[13] = col;
+						xy[14] = dir;
+						break;
+			default: break;
+		}
+	}
+
+	private static int getPosition(ShipName _selectedShip, String info) {
+		switch (_selectedShip.ToString()) {
+			case "Tug": if (info == "row") {return xy[0];} else if (info=="col") {return xy[1];} else {return xy[2];};
+			case "Submarine": if (info == "row") {return xy[3];} else if (info=="col") {return xy[4];} else {return xy[5];};
+			case "Destoryer": if (info == "row") {return xy[6];} else if (info=="col") {return xy[7];} else {return xy[8];};
+			case "Battleship": if (info == "row") {return xy[9];} else if (info=="col") {return xy[10];} else {return xy[11];};
+			case "AircraftCarrier": if (info == "row") {return xy[12];} else if (info=="col") {return xy[13];} else {return xy[14];};
+			default: return 1;
 		}
 	}
 
@@ -108,6 +152,11 @@ static class DeploymentController
 		//Calculate the row/col clicked
 		int row = 0;
 		int col = 0;
+		int dir = 0;
+
+		if (_currentDirection == Direction.LeftRight) {
+			dir = 1;
+		}
 		row = Convert.ToInt32(Math.Floor((mouse.Y - FIELD_TOP) / (CELL_HEIGHT + CELL_GAP)));
 		col = Convert.ToInt32(Math.Floor((mouse.X - FIELD_LEFT) / (CELL_WIDTH + CELL_GAP)));
 
@@ -116,9 +165,19 @@ static class DeploymentController
 				//if in the area try to deploy
 				try {
 					HumanPlayer.PlayerGrid.MoveShip(row, col, _selectedShip, _currentDirection);
+					RecPosition(_selectedShip, row, col, dir);
 				} catch (Exception ex) {
 					Audio.PlaySoundEffect(GameSound("Error"));
 					Message = ex.Message;
+					row = getPosition(_selectedShip, "row");
+					col = getPosition(_selectedShip, "col");
+					Direction tempDir;
+					if (getPosition(_selectedShip, "dir") == 0) {
+						tempDir = Direction.UpDown;
+					} else {
+						tempDir = Direction.LeftRight;
+					}
+					HumanPlayer.PlayerGrid.MoveShip(row, col, _selectedShip, tempDir);
 				}
 			}
 		}

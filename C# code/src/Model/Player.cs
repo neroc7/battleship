@@ -201,8 +201,10 @@ public class Player : IEnumerable<Ship>
 		return result;
 	}
 
-	public virtual void RandomizeDeployment()
+	public virtual int[] RandomizeDeployment()
 	{
+		int[] newXY = new int[15];
+		int position = 0;
 		bool placementSuccessful = false;
 		Direction heading = default(Direction);
 
@@ -231,11 +233,17 @@ public class Player : IEnumerable<Ship>
 				try {
 					PlayerGrid.MoveShip(x, y, shipToPlace, heading);
 					placementSuccessful = true;
+					newXY[position] = x;
+					newXY[position+1] = y;
+					newXY[position+2] = dir;
+					position += 3;
 				} catch {
 					placementSuccessful = false;
 				}
 			} while (!placementSuccessful);
 		}
+		Console.WriteLine(newXY[0]);
+		return newXY;
 	}
 }
 
