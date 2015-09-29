@@ -194,6 +194,7 @@ static class HighScoreController
 				DrawBackground();
 				DrawHighScores();
 				SwinGame.DrawText("Name: ", Color.White, GameFont("Courier"), SCORES_LEFT, ENTRY_TOP);
+				SwinGame.DrawText(SwinGame.TextReadAsASCII(), Color.White, GameFont("Courier"), SCORES_LEFT + 50, ENTRY_TOP);
 				SwinGame.RefreshScreen();
 			}
 
