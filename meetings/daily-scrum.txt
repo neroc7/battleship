@@ -1,0 +1,27 @@
+Daily Stand-up Notes
+====================
+* most bugs fixed
+* backlog are approved by owner
+
+Sprint Review
+=============
+
+We demonstrated the current product to product owner
+And the owner pointed out still have bugs in these fields:
+
+* Ships should not disappear if it put on a unavailable position
+* The name inputing does not working properly
+
+
+These parts (bugs) has been fixed properly:
+* Difficulty works
+* Shooting score works
+* Direction button works
+
+
+
+Sprint Retrospective
+====================
+
+show a better version of the program
+improve by finish everything on sprint 1
