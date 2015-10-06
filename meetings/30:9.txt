@@ -1,0 +1,8 @@
+Practice Improvement
+=================
+
+* Improve how we use trello to keep track of our tasks
+* Do not assign every member to a single task
+* Update the file to Github once a target function achieved
+* Update the trello board as we are working on our tasks
+* Testing the product more often
