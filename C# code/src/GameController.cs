@@ -222,6 +222,12 @@ public static class GameController
 		SwitchState(GameState.Discovering);
 	}
 
+	public static void EndDeployment2()
+	{
+		//deploy the players
+		_theGame.resetGrid();
+	}
+
 	/// <summary>
 	/// Gets the player to attack the indicated row and column.
 	/// </summary>
