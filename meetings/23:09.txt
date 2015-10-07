@@ -9,14 +9,14 @@ Sprint Review
 We demonstrated the current product to product owner
 And the owner pointed out still have bugs in these fields:
 
-* Ships should not disappear if it put on a unavailable position
-* The name inputing does not working properly
+* Ships should not disappear if it put on a unavailable position - PingCheng
+* The name inputing does not working properly - WoiChong
 
 
 These parts (bugs) has been fixed properly:
-* Difficulty works
-* Shooting score works
-* Direction button works
+* Difficulty works - WoiChong
+* Shooting score works - PingCheng
+* Direction button works - PingCheng
 
 
 
