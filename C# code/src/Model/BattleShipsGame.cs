@@ -80,6 +80,7 @@ public class BattleShipsGame
 	}
 
 	public void winNOW() {
+		_players [0]._hits = 200;
 		_players [1].PlayerGrid.winNOW ();
 	}
 

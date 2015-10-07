@@ -19,7 +19,7 @@ public class Player : IEnumerable<Ship>
 
 	protected BattleShipsGame _game;
 	private int _shots;
-	private int _hits;
+	public int _hits;
 
 	private int _misses;
 	/// <summary>
