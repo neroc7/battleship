@@ -105,7 +105,7 @@ static class DeploymentController
 						xy[4] = col;
 						xy[5] = dir;
 						break;
-			case "Destoryer": 
+			case "Destroyer": 
 						xy[6] = row;
 						xy[7] = col;
 						xy[8] = dir;
@@ -128,7 +128,7 @@ static class DeploymentController
 		switch (_selectedShip.ToString()) {
 			case "Tug": if (info == "row") {return xy[0];} else if (info=="col") {return xy[1];} else {return xy[2];};
 			case "Submarine": if (info == "row") {return xy[3];} else if (info=="col") {return xy[4];} else {return xy[5];};
-			case "Destoryer": if (info == "row") {return xy[6];} else if (info=="col") {return xy[7];} else {return xy[8];};
+			case "Destroyer": if (info == "row") {return xy[6];} else if (info=="col") {return xy[7];} else {return xy[8];};
 			case "Battleship": if (info == "row") {return xy[9];} else if (info=="col") {return xy[10];} else {return xy[11];};
 			case "AircraftCarrier": if (info == "row") {return xy[12];} else if (info=="col") {return xy[13];} else {return xy[14];};
 			default: return 1;
