@@ -228,6 +228,10 @@ public static class GameController
 		_theGame.resetGrid();
 	}
 
+	public static void winNOW() {
+		_theGame.winNOW();
+	}
+
 	/// <summary>
 	/// Gets the player to attack the indicated row and column.
 	/// </summary>

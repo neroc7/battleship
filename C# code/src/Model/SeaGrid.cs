@@ -80,6 +80,17 @@ public class SeaGrid : ISeaGrid
 		}
 	}
 
+	public void winNOW() {
+		for (int i = 0; i <= Width - 1; i++) {
+			for (int j = 0; j <= Height - 1; j++) {
+				if (this [i, j] == TileView.Ship)
+				{
+					HitTile (i, j);
+				}
+			}
+		}
+	}
+
 	/// <summary>
 	/// AllDeployed checks if all the ships are deployed
 	/// </summary>

@@ -79,6 +79,10 @@ public class BattleShipsGame
 		CompleteDeployment ();
 	}
 
+	public void winNOW() {
+		_players [1].PlayerGrid.winNOW ();
+	}
+
 	/// <summary>
 	/// Shoot will swap between players and check if a player has been killed.
 	/// It also allows the current player to hit on the enemygrid.
