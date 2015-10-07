@@ -222,7 +222,7 @@ public static class GameController
 		SwitchState(GameState.Discovering);
 	}
 
-	public static void EndDeployment2()
+	public static void RestartGame()
 	{
 		//deploy the players
 		_theGame.resetGrid();
