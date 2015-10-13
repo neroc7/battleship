@@ -76,6 +76,9 @@ public class BattleShipsGame
 	public void resetGrid() {
 		_players [0].PlayerGrid.reset ();
 		_players [1].PlayerGrid.reset ();
+		_players [0]._hits = 0;
+		_players [0]._shots = 0;
+		_players [0]._misses = 0;
 		CompleteDeployment ();
 	}
 
