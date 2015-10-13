@@ -79,6 +79,7 @@ public class BattleShipsGame
 		_players [0]._hits = 0;
 		_players [0]._shots = 0;
 		_players [0]._misses = 0;
+		_players [1].PlayerGrid._ShipsKilled = 0;
 		CompleteDeployment ();
 	}
 
@@ -114,6 +115,7 @@ public class BattleShipsGame
 		if (newAttack.Value == ResultOfAttack.Miss) {
 			_playerIndex = otherPlayer;
 		}
+			
 
 		return newAttack;
 	}

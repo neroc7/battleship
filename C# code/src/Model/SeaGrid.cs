@@ -22,7 +22,7 @@ public class SeaGrid : ISeaGrid
 	private Tile[,] _GameTiles;
 	private Dictionary<ShipName, Ship> _Ships;
 
-	private int _ShipsKilled = 0;
+	public int _ShipsKilled = 0;
 	/// <summary>
 	/// The sea grid has changed and should be redrawn.
 	/// </summary>
@@ -70,11 +70,11 @@ public class SeaGrid : ISeaGrid
 			for (int j = 0; j <= Height - 1; j++) {
 				if (this [i, j] == TileView.Hit)
 				{
-					_GameTiles[i, j] = new Tile (i, j, _GameTiles[i, j].Ship);
+					_GameTiles [i, j] = new Tile (i, j, _GameTiles [i, j].Ship);
 				}
 				else if (this [i, j] == TileView.Miss)
 				{
-					_GameTiles[i, j] = new Tile (i, j, _GameTiles[i, j].Ship);
+					_GameTiles [i, j] = new Tile (i, j);
 				}
 			}
 		}
@@ -116,7 +116,7 @@ public class SeaGrid : ISeaGrid
 		int i = 0;
 		for (i = 0; i <= Width - 1; i++) {
 			for (int j = 0; j <= Height - 1; j++) {
-				_GameTiles[i, j] = new Tile(i, j, null);
+				_GameTiles[i, j] = new Tile(i, j);
 			}
 		}
 
@@ -213,6 +213,7 @@ public class SeaGrid : ISeaGrid
 			if (_GameTiles[row, col].Ship.IsDestroyed) {
 				_GameTiles[row, col].Shot = true;
 				_ShipsKilled += 1;
+				Console.Write(_ShipsKilled);
 				return new AttackResult(ResultOfAttack.Destroyed, _GameTiles[row, col].Ship, "destroyed the enemy's", row, col);
 			}
 
