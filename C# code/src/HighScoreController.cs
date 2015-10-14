@@ -108,6 +108,8 @@ static class HighScoreController
 		string filename = null;
 		filename = SwinGame.PathToResource("highscores.txt");
 
+		File.Create(filename).Close();
+
 		StreamWriter output = default(StreamWriter);
 		output = new StreamWriter(filename);
 
@@ -142,7 +144,7 @@ static class HighScoreController
 			s = _Scores[i];
 
 			//for scores 1 - 9 use 01 - 09
-			if (i < 9) {
+			if (i < 14) {
 				SwinGame.DrawText(" " + (i + 1) + ":   " + s.Name + "   " + s.Value, Color.White, GameFont("Courier"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
 			} else {
 				SwinGame.DrawText(i + 1 + ":   " + s.Name + "   " + s.Value, Color.White, GameFont("Courier"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
@@ -207,6 +209,8 @@ static class HighScoreController
 			_Scores.RemoveAt(_Scores.Count - 1);
 			_Scores.Add(s);
 			_Scores.Sort();
+
+			SaveScores();	
 
 			EndCurrentState();
 		}
