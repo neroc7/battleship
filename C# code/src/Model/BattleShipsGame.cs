@@ -71,7 +71,6 @@ public class BattleShipsGame
 	{
 		_players[0].Enemy = new SeaGridAdapter(_players[1].PlayerGrid);
 		_players[1].Enemy = new SeaGridAdapter(_players[0].PlayerGrid);
-<<<<<<< HEAD:C# code/src/Model/BattleShipsGame.cs
 	}
 
 	public void resetGrid() {
@@ -87,8 +86,6 @@ public class BattleShipsGame
 	public void winNOW() {
 		_players [0]._hits = 200;
 		_players [1].PlayerGrid.winNOW ();
-=======
->>>>>>> master:C# code/src/Model/BattleShipsGame.cs
 	}
 
 	/// <summary>

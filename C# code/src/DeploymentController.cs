@@ -69,11 +69,7 @@ static class DeploymentController
 		}
 
 		if (SwinGame.KeyTyped(KeyCode.vk_r)) {
-<<<<<<< HEAD:C# code/src/DeploymentController.cs
 			xy = HumanPlayer.RandomizeDeployment();
-=======
-			HumanPlayer.RandomizeDeployment();
->>>>>>> master:C# code/src/DeploymentController.cs
 		}
 
 		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
