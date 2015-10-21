@@ -62,6 +62,7 @@ public class SeaGrid : ISeaGrid
 	public TileView this[int x, int y]
 	{
 		get { return _GameTiles[x, y].View; }
+<<<<<<< HEAD:C# code/src/Model/SeaGrid.cs
 	}
 
 	public void reset() {
@@ -89,6 +90,8 @@ public class SeaGrid : ISeaGrid
 				}
 			}
 		}
+=======
+>>>>>>> master:C# code/src/Model/SeaGrid.cs
 	}
 
 	/// <summary>
@@ -116,7 +119,11 @@ public class SeaGrid : ISeaGrid
 		int i = 0;
 		for (i = 0; i <= Width - 1; i++) {
 			for (int j = 0; j <= Height - 1; j++) {
+<<<<<<< HEAD:C# code/src/Model/SeaGrid.cs
 				_GameTiles[i, j] = new Tile(i, j);
+=======
+				_GameTiles[i, j] = new Tile(i, j, null);
+>>>>>>> master:C# code/src/Model/SeaGrid.cs
 			}
 		}
 
@@ -213,7 +220,10 @@ public class SeaGrid : ISeaGrid
 			if (_GameTiles[row, col].Ship.IsDestroyed) {
 				_GameTiles[row, col].Shot = true;
 				_ShipsKilled += 1;
+<<<<<<< HEAD:C# code/src/Model/SeaGrid.cs
 				Console.Write(_ShipsKilled);
+=======
+>>>>>>> master:C# code/src/Model/SeaGrid.cs
 				return new AttackResult(ResultOfAttack.Destroyed, _GameTiles[row, col].Ship, "destroyed the enemy's", row, col);
 			}
 
