@@ -1,0 +1,21 @@
+Daily Scrum
+===========
+
+* Ping implements the “restart” game function
+* Ping researched the SwinGame Music support format
+* Woi fixed one of the missing sounds
+
+
+
+Sprint Review
+=============
+
+* Showed the SwinGame does different behaviour in MAC and Windows on same code, and product owner accept that. (Multi-OS support added to product backlog and sprint 2 backlog)
+* None of completed feature are implemented,so didn’t show the product to the owner. Owner is satisfied with the product on last sprint.
+
+
+Sprint Retrospective
+====================
+
+* has more communication than previous sprint
+* still need a good task time slot establishing

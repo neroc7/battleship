@@ -1,0 +1,23 @@
+Date/Location: 9-09-2015, EN310
+Attendees: Ping Cheng, Woi Chong , Josh
+Start Time: 16:00
+End Time: 16.30
+
+Decisions
+=========
+* project backlog task will estimated in 8 hour 
+* using slack for the project
+* listing some posible extension into Trello
+* Bug fix tasks allocated
+
+Actions
+=======
+* Create Trello board ready for Sprint process - Josh
+* Create channel on slack soo we can track the sprint process - WoiChong
+* Identified task to the project backlog - josh
+* Create backlog list in Trello - Josh
+* Show backlog to the project owner - group
+* Fix the bugs in C# - Ping
+* Complete the extension - Woi, Josh
+* Testing the C# code - group
+* Create a Extension list to Trello 

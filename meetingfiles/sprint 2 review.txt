@@ -1,0 +1,8 @@
+Sprint Review
+=============
+
+* The sprint 2 backlog tasks are all completed
+* Josh done the high score, problems and extensions
+* Woi done the sound issue, for missing file and background music
+* Ping done the cheating features and restart function
+* owner accepted the project we developed so far
