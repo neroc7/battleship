@@ -16,7 +16,7 @@ public class Tile
 		//the column value of the tile
 	private readonly int _ColumnValue;
 		//the ship the tile belongs to
-	private Ship _Ship = null;
+	public Ship _Ship = null;
 		//the tile has been shot at
 	private bool _Shot = false;
 
@@ -75,7 +75,14 @@ public class Tile
 	{
 		_RowValue = row;
 		_ColumnValue = col;
+		ship._hitsTaken = 0;
 		_Ship = ship;
+	}
+
+	public Tile(int row, int col) {
+		_RowValue = row;
+		_ColumnValue = col;
+		_Ship = null;
 	}
 
 	/// <summary>

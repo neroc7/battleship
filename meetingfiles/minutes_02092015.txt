@@ -1,0 +1,18 @@
+Date/Location: 2-09-2015, EN310
+Attendees: Ping Cheng, Woi Chong , Josh
+Start Time: 16:00
+End Time: 16.30
+
+Decisions
+=========
+
+* Convert the code with telerik
+* Use Swinburne coding standard for the document
+
+Actions
+=======
+* Convert the code into C# - 2 sept 2015 5pm
+* Documenting - 8 sept 2015(every member)
+* Test the program after convert the code into C#(every member)- 8 sept 2015
+* Fixing the error and make sure the code is running (every member) - 2 sept 2015
+* listing missing feature and extension features on trello (every member)- 8 sept 2015

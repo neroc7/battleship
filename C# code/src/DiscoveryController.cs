@@ -33,6 +33,15 @@ static class DiscoveryController
 			AddNewState(GameState.ViewingGameMenu);
 		}
 
+		if (SwinGame.KeyTyped (KeyCode.vk_r)) {
+			RestartGame();
+		}
+
+		if (SwinGame.KeyTyped (KeyCode.vk_a))
+		{
+			winNOW ();
+		}
+
 		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
 			DoAttack();
 		}

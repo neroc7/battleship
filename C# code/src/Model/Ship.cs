@@ -15,9 +15,9 @@ using System.Diagnostics;
 /// </remarks>
 public class Ship
 {
-	private ShipName _shipName;
+	public ShipName _shipName;
 	private int _sizeOfShip;
-	private int _hitsTaken = 0;
+	public int _hitsTaken = 0;
 	private List<Tile> _tiles;
 	private int _row;
 	private int _col;
@@ -55,6 +55,11 @@ public class Ship
 	/// <remarks>When this equals Size the ship is sunk</remarks>
 	public int Hits {
 		get { return _hitsTaken; }
+	}
+
+	public int resetHit {
+		get {return _hitsTaken;}
+		set {_hitsTaken = 0; }
 	}
 
 	/// <summary>

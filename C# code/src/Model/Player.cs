@@ -18,10 +18,10 @@ public class Player : IEnumerable<Ship>
 	private ISeaGrid _enemyGrid;
 
 	protected BattleShipsGame _game;
-	private int _shots;
-	private int _hits;
+	public int _shots;
+	public int _hits;
 
-	private int _misses;
+	public int _misses;
 	/// <summary>
 	/// Returns the game that the player is part of.
 	/// </summary>
@@ -179,25 +179,32 @@ public class Player : IEnumerable<Ship>
 	/// <returns>the result of the attack</returns>
 	internal AttackResult Shoot(int row, int col)
 	{
-		_shots += 1;
 		AttackResult result = default(AttackResult);
 		result = EnemyGrid.HitTile(row, col);
 
 		switch (result.Value) {
+			case ResultOfAttack.ShotAlready:
+				break;
 			case ResultOfAttack.Destroyed:
 			case ResultOfAttack.Hit:
 				_hits += 1;
+				_shots += 1;
 				break;
 			case ResultOfAttack.Miss:
 				_misses += 1;
+				_shots += 1;
+				break;
+			default:
 				break;
 		}
 
 		return result;
 	}
 
-	public virtual void RandomizeDeployment()
+	public virtual int[] RandomizeDeployment()
 	{
+		int[] newXY = new int[15];
+		int position = 0;
 		bool placementSuccessful = false;
 		Direction heading = default(Direction);
 
@@ -226,11 +233,17 @@ public class Player : IEnumerable<Ship>
 				try {
 					PlayerGrid.MoveShip(x, y, shipToPlace, heading);
 					placementSuccessful = true;
+					newXY[position] = x;
+					newXY[position+1] = y;
+					newXY[position+2] = dir;
+					position += 3;
 				} catch {
 					placementSuccessful = false;
 				}
 			} while (!placementSuccessful);
 		}
+		Console.WriteLine(newXY[0]);
+		return newXY;
 	}
 }
 

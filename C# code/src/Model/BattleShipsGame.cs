@@ -56,7 +56,10 @@ public class BattleShipsGame
 			_players[1] = p;
 			CompleteDeployment();
 		} else {
-			throw new ApplicationException("You cannot add another player, the game already has two players.");
+//			throw new ApplicationException("You cannot add another player, the game already has two players.");
+			_players[0] = null;
+			_players[1] = null;
+			AddDeployedPlayer (p);
 		}
 	}
 
@@ -64,10 +67,25 @@ public class BattleShipsGame
 	/// Assigns each player the other's grid as the enemy grid. This allows each player
 	/// to examine the details visable on the other's sea grid.
 	/// </summary>
-	private void CompleteDeployment()
+	public void CompleteDeployment()
 	{
 		_players[0].Enemy = new SeaGridAdapter(_players[1].PlayerGrid);
 		_players[1].Enemy = new SeaGridAdapter(_players[0].PlayerGrid);
+	}
+
+	public void resetGrid() {
+		_players [0].PlayerGrid.reset ();
+		_players [1].PlayerGrid.reset ();
+		_players [0]._hits = 0;
+		_players [0]._shots = 0;
+		_players [0]._misses = 0;
+		_players [1].PlayerGrid._ShipsKilled = 0;
+		CompleteDeployment ();
+	}
+
+	public void winNOW() {
+		_players [0]._hits = 200;
+		_players [1].PlayerGrid.winNOW ();
 	}
 
 	/// <summary>
@@ -97,6 +115,7 @@ public class BattleShipsGame
 		if (newAttack.Value == ResultOfAttack.Miss) {
 			_playerIndex = otherPlayer;
 		}
+			
 
 		return newAttack;
 	}
